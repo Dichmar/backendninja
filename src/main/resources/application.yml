@@ -1,0 +1,26 @@
+#Spring
+spring:
+  banner:
+    charset: UTF-8 # Banner file encoding.
+    location: classpath:banner.txt # Banner text resource location.
+    image:
+      location: classpath:banner.gif # Banner image file location (jpg or png can also be used).
+      width: 76 # Width of the banner image in chars.
+      height: 100 # Height of the banner image in chars (default based on image height).
+      margin: 2 # Left hand image margin in chars.
+      invert: false # Whether images should be inverted for dark terminal themes.
+#MySQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/consulting?useSSL=false
+    data-username: root
+    password:  root
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  
