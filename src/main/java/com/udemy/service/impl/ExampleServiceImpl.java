@@ -17,7 +17,7 @@ public class ExampleServiceImpl implements ExampleService {
 
 	@Override
 	public List<Person> getListPeople() {
-		List<Person> people = new ArrayList<>();
+		List<Person> people = new ArrayList<Person>();
 		people.add(new Person("Jon", 22));
 		people.add(new Person("Michel", 24));
 		people.add(new Person("Jorge", 27));

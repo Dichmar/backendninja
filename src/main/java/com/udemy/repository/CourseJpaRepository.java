@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.udemy.entity.Course;
 
-@Repository("courseJpaRepository")
+@Repository("jpaRepository")
 public interface CourseJpaRepository extends JpaRepository<Course, Serializable> {
 
 	public abstract Course findByPrice(int price);

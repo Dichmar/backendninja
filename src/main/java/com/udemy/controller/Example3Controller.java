@@ -49,7 +49,7 @@ public class Example3Controller {
 	}
 	
 	@PostMapping("/addPerson")
-	public ModelAndView addPerson(@Valid @ModelAttribute("person") Person person, BindingResult bindingResult) {
+	public ModelAndView addPersona(@Valid @ModelAttribute("person") Person person, BindingResult bindingResult) {
 		LOGGER.info("METHOD: -- addPerson -- PARAMS: -- '"+person+"' --");
 		ModelAndView mav = new ModelAndView();
 		if(bindingResult.hasErrors()) {

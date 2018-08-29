@@ -2,8 +2,13 @@ package com.udemy.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,18 +17,43 @@ public class Course {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "id")
+	@Column(name = "id_course")
 	private int id;
-	
+
 	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "description")
 	private String description;
-	
-	@Column(name = "price")
-	private int price; 
 
+	@Column(name = "price")
+	private int price;
+
+	@Column(name = "hours")
+	private int hours;
+
+//	@OneToMany
+//	@JoinColumn(name="id_categoria")
+//	private Category category;
+	
+//	@ManyToOne(fetch=FetchType.EAGER)
+//	@JoinColumn(name="categoria_id", referencedColumnName="id_categoria")
+//	private Category categoria;
+	
+	
+	//casi 1
+//	@ManyToOne(fetch=FetchType.LAZY)
+//	@JoinColumn(name="categoria_id", foreignKey = @ForeignKey(name = "FK_COURSE"))
+//	@JoinColumns({
+//	    @JoinColumn(name="categoria_id", referencedColumnName="id_categoria"),
+//	    @JoinColumn(name="id_categoria", referencedColumnName="categoria_id")
+//	})
+//	private Category categoria;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="categoria_id", foreignKey = @ForeignKey(name = "FK_COURSE"))
+	private Category categoria;
+	
 	public Course() {
 	}
 
@@ -35,8 +65,6 @@ public class Course {
 		this.price = price;
 		this.hours = hours;
 	}
-
-	private int hours;
 
 	public int getId() {
 		return id;
@@ -77,5 +105,4 @@ public class Course {
 	public void setHours(int hours) {
 		this.hours = hours;
 	}
-
 }
