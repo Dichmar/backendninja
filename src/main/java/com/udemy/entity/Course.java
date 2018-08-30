@@ -2,13 +2,8 @@ package com.udemy.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -50,9 +45,9 @@ public class Course {
 //	})
 //	private Category categoria;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="categoria_id", foreignKey = @ForeignKey(name = "FK_COURSE"))
-	private Category categoria;
+//	@ManyToOne(fetch=FetchType.LAZY)
+//	@JoinColumn(name="categoria_id", foreignKey = @ForeignKey(name = "FK_COURSE"))
+//	private Category categoria;
 	
 	public Course() {
 	}
@@ -104,5 +99,11 @@ public class Course {
 
 	public void setHours(int hours) {
 		this.hours = hours;
+	}
+
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", hours="
+				+ hours + " ]";
 	}
 }

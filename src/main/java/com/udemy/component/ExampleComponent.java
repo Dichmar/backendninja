@@ -8,13 +8,14 @@ import org.springframework.stereotype.Component;
 
 import com.udemy.repository.CourseJpaRepository;
 
+
 @Component("exampleComponent")
 public class ExampleComponent {
 
 	private static final Log LOGGER = LogFactory.getLog(ExampleComponent.class);
 	
 	@Autowired
-	@Qualifier("jpaRepository")
+	@Qualifier("courseJpaRepository")
 	private CourseJpaRepository courseJpaRepository;
 	
 	public void sayHello() {

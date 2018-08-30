@@ -1,0 +1,34 @@
+html {
+	font-size: 12px;
+} 
+
+table thead tr th{
+	background-color: #1e90ff; /*#021AC2;*/
+	color: white;
+/* 	padding: 5px 80px; */
+	font-size: 1.8rem;
+}
+
+table tbody tr td {
+	color: black;
+	font-size: 1.5rem;
+/* 	padding: 10px 0px; */
+}
+
+tr{
+   /* Todas las filas blancas */
+   background-color: #F0FFF0;
+}
+ tr:nth-child(2n+1){
+   /* Filas impares grises */
+   background-color: #DCDCDC;
+ }
+ tr:hover{
+   /* Filas celeste al pasar el mouse */
+   background-color: aqua;
+ }
+ 
+ 
+ select {
+ 	text-align-last: center!important;
+ }
